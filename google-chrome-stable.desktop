@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Exec=/usr/bin/google-chrome --inkognito --kiosk http://epam.com
+# file:///home/tv/Downloads/EPAM\ \ Timelapse.mp4
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=google-chrome
+Name=google-chrome
+Comment[en_US]=
+Comment=

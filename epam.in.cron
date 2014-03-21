@@ -1,0 +1,7 @@
+SHELL=/bin/bash
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+* * * * *   root /tools/dial_test.sh
+#*/3 * * * *   root	if [ -f /tmp/chrome-reboot ];then  /home/vmironov/dial_test.sh
+00 08 * * Mon-Sat tv /tools/turn_screen
+00 20 * * Mon-Sat tv /tools/turn_screen off
