@@ -62,5 +62,5 @@ $2
 </html>
 ."
 echo ""
-) | sendmail -f $(echo $FROM | sed -r 's/.*<//; s/>.*//') -t
+) | sendmail -f $(echo $FROM | /bin/sed -r 's/.*<//; s/>.*//') -t
 }
