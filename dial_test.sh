@@ -5,7 +5,7 @@
 . /tools/functions.sh
 
 # report "RGRTA tv host ip address" "FYI: <b>$(/sbin/ip addr show ppp0 | grep inet|awk '{print $2}')</b>"
-echo "***************$(date)*************************" >> /var/log/wvdialsky.log
+##echo "***************$(date)*************************" >> /var/log/wvdialsky.log
 
 if [ -a $DEVICE ]; then
      proc=$(ps -aef | grep -v grep | grep 'wvdial' | awk '{print $2}')

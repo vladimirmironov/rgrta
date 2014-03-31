@@ -1,0 +1,5 @@
+#
+#!/bin/bash
+
+  export DISPLAY=:0 && killall -w -9 vlc;vlc --autoscale --loop --fullscreen -I ncurses --browse-dir /home/tv/Downloads/
+fi
