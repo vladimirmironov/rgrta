@@ -1,12 +1,13 @@
-#
 #!/bin/bash
 
+SET_NO_SOUND=--noaudio
+#SET_NO_SOUND=""
+
+
+killall -w -9 vlc
+
 if [ $1 ];then
-    export DISPLAY=:0 && killall -w -9 vlc;vlc --fullscreen $1 > /dev/null &
+    export DISPLAY=:0 && vlc vlc --autoscale --no-video-title-show $SET_NO_SOUND --loop --fullscreen  $1 2> /dev/null &
 else
-#  export DISPLAY=:0 && killall -w -9 vlc;vlc --fullscreen /home/tv/Downloads EPAM\ \ Timelapse.mp4 > /dev/null &
-##  export DISPLAY=:0 && killall -w -9 vlc;vlc --loop --fullscreen /home/tv/Downloads/EPAM\ \ Timelapse.mp4 > /dev/null &
-###  export DISPLAY=:0 && killall -w -9 vlc;vlc --noaudio --loop --fullscreen /home/tv/Downloads/EPAM\ \ Timelapse.mp4 > /dev/null &
-#  export DISPLAY=:0 && killall -w -9 vlc;vlc  --autoscale --no-video-title-show --noaudio --loop --fullscreen /home/tv/Downloads/* > /dev/null &
-  export DISPLAY=:0 && killall -w -9 vlc;vlc  --autoscale --no-video-title-show --noaudio --loop --fullscreen /home/tv/Downloads/try.m3u 2> /dev/null &
+  export DISPLAY=:0 && vlc --autoscale --no-video-title-show $SET_NO_SOUND --loop --fullscreen /tools/epam.m3u 2> /dev/null &
 fi

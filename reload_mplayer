@@ -1,0 +1,9 @@
+#!/bin/bash
+
+killall -w -9 mplayer
+
+if [ $1 ];then
+    export DISPLAY=:0 && mplayer -fs -playlist $1 > /dev/null &
+else
+  export DISPLAY=:0 && mplayer -loop 0 -fs -playlist /tools/epam.m3u > /dev/null &
+fi
