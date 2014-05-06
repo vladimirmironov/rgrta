@@ -7,7 +7,7 @@ SET_NO_SOUND=--noaudio
 killall -w -9 vlc
 
 if [ $1 ];then
-    export DISPLAY=:0 && vlc vlc --autoscale --no-video-title-show $SET_NO_SOUND --loop --fullscreen  $1 2> /dev/null &
+    export DISPLAY=:0 && vlc --autoscale --no-video-title-show $SET_NO_SOUND --loop --fullscreen  $1 2> /dev/null &
 else
-  export DISPLAY=:0 && vlc --autoscale --no-video-title-show $SET_NO_SOUND --loop --fullscreen /tools/epam.m3u 2> /dev/null &
+  export DISPLAY=:0 && vlc --autoscale --no-video-title-show $SET_NO_SOUND --loop --fullscreen /home/tv/content/*.m3u 2> /dev/null &
 fi
