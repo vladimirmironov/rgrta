@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ "$1"  ];then
+    cat $1 | sed -e s/\\\\//g > ${1%.m3u}-m.m3u
+    rm -f $1
+    mv ${1%.m3u}-m.m3u ${1%.m3u}.m3u
+    echo "done!"
+else
+ echo "usage: $0 /path/to/[file].m3u"
+fi

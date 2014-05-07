@@ -1,6 +1,6 @@
 #!/bin/bash
 
 
-cat $1 | sed -e s/.JPG/.jpg/g > /tmp/epam-m.m3u
+cat $1 | sed -e s/.JPG/-klein.jpg/g > /tmp/epam-m.m3u
 cat /tmp/epam-m.m3u | sed -e s/\\\\//g > ${1%.m3u}-m.m3u
 rm -f /tmp/epam-m.m3u

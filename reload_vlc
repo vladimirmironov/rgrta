@@ -3,11 +3,14 @@
 SET_NO_SOUND=--noaudio
 #SET_NO_SOUND=""
 
+if [ "$(ps ax | grep vlc)" ];then
+    killall -w -9 vlc
+fi
 
-killall -w -9 vlc
-
+export DISPLAY=:0 && xset dpms force off
 if [ $1 ];then
     export DISPLAY=:0 && vlc --autoscale --no-video-title-show $SET_NO_SOUND --loop --fullscreen  $1 2> /dev/null &
 else
   export DISPLAY=:0 && vlc --autoscale --no-video-title-show $SET_NO_SOUND --loop --fullscreen /home/tv/content/*.m3u 2> /dev/null &
 fi
+export DISPLAY=:0 && xset dpms force on

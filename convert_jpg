@@ -2,11 +2,20 @@
 
 ##convert -resize 1000x1
 
-Xaxis=$(export DISPLAY=:0;xrandr --current | grep '*' | uniq | awk '{print $1}' |  cut -d 'x' -f1)
-Yaxis=$(export DISPLAY=:0;xrandr --current | grep '*' | uniq | awk '{print $1}' |  cut -d 'x' -f2)
+Xaxis=$(export DISPLAY=:0;xrandr --current | grep '*' | uniq | awk '{print $1}' |  cut -d 'x' -f1 | tail -n 1)
+Yaxis=$(export DISPLAY=:0;xrandr --current | grep '*' | uniq | awk '{print $1}' |  cut -d 'x' -f2 | tail -n 1)
 MaxRes=$(($Xaxis-5))"x"$(($Yaxis-25))
 
-for i in /home/tv/Downloads/*.JPG; do 
+if [ $1 ];then
+    DIR=$1
+else
+    DIR=/home/tv/content/photo
+fi
+
+rm -f $DIR/playlist.m3u
+
+for i in $DIR/*.JPG; do 
     echo "${i%.JPG} --- $MaxRes..."
-    convert -resize $MaxRes -quality 90 $i ${i%.JPG}-klein.jpg
+    convert -resize $MaxRes -quality 100 $i ${i%.JPG}-klein.jpg
+    echo "${i%.JPG}-klein.jpg" >> $DIR/playlist.m3u
 done

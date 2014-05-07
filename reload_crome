@@ -1,7 +1,10 @@
 #!/bin/bash
 
+
+export DISPLAY=:0 && xset dpms force off
 if [ $1 ];then
     export DISPLAY=:0 && killall -w -9 chrome;google-chrome --incognito --kiosk $1 > /dev/null &
 else
   export DISPLAY=:0 && killall -w -9 chrome;google-chrome --incognito --kiosk http://epam.com > /dev/null &
 fi
+export DISPLAY=:0 && xset dpms force on

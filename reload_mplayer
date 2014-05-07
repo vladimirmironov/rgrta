@@ -2,8 +2,10 @@
 
 killall -w -9 mplayer
 
+export DISPLAY=:0 && xset dpms force off
 if [ $1 ];then
     export DISPLAY=:0 && mplayer -fs -playlist $1 > /dev/null &
 else
   export DISPLAY=:0 && mplayer -loop 0 -fs -playlist /tools/epam.m3u > /dev/null &
 fi
+export DISPLAY=:0 && xset dpms force on

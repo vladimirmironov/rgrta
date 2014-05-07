@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=/tools/reload_vlc
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=reload_vlc
+Name=reload_vlc
+Comment[en_US]=
+Comment=
